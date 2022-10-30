@@ -77,6 +77,33 @@ Games
 <h2>Let's Keep In Touch</h2>
 <a href="mailto:muktha.pod@gmail.com" style="background:#D7E3FC; padding:10px 20px; border-radius:5px; text-decoration:none; ">Connect</a>
 </footer>
-<script src="script.js"></script>
+<script>
+$(function(){
+
+  $('.faq-list-item').click(function(){
+    var $answer = $(this).find('.answer');
+
+    if($answer.hasClass('open')) { 
+      $answer.removeClass('open');
+      // Use the slideUp() method to hide $answer
+      $answer.slideUp();
+      
+      // Find the <span> elements inside, then rewrite the content using the text() method
+      $(this).find('span').text('+');
+      
+    } else {
+      $answer.addClass('open'); 
+      // Use the slideDown() method to show $answer
+      $answer.slideDown();
+      $(this).find('span').text('-');
+      // Find the <span> elements inside, then rewrite the content using the text() method
+      
+      
+    }
+  });
+});
+
+
+</script>
 </body>
 </html>
